@@ -6,6 +6,7 @@ import {
     Button,
     Box,
 } from "@mui/material";
+import useNews from "../hooks/useNews";
 
 const categorias = [
     { value: "general", label: "General" },
@@ -18,11 +19,17 @@ const categorias = [
 ];
 
 const Search = () => {
+    const { handdlerChangeCategory, category } = useNews();
+
     return (
         <form>
             <FormControl fullWidth size="small">
                 <InputLabel>Categoría</InputLabel>
-                <Select label="Categoría">
+                <Select
+                    label="Categoría"
+                    onChange={(e) => handdlerChangeCategory(e)}
+                    value={category}
+                >
                     {categorias.map((categoria) => (
                         <MenuItem key={categoria.value} value={categoria.value}>
                             {categoria.label}
