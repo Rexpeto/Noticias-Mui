@@ -36,6 +36,7 @@ export const NewsProvider = ({ children }) => {
             value={{
                 handdlerChangeCategory,
                 category,
+                news,
             }}
         >
             {children}
