@@ -1,6 +1,7 @@
 import { Container, Grid, Typography } from "@mui/material";
 import { NewsProvider } from "./context/NewsProvider";
 import Search from "./components/Search";
+import ListNews from "./components/ListNews";
 
 const App = () => {
     return (
@@ -23,6 +24,7 @@ const App = () => {
                         <Search />
                     </Grid>
                 </Grid>
+                <ListNews />
             </Container>
         </NewsProvider>
     );
