@@ -36,15 +36,6 @@ const Search = () => {
                         </MenuItem>
                     ))}
                 </Select>
-                <Box
-                    sx={{
-                        marginTop: 2,
-                    }}
-                >
-                    <Button variant="outlined" fullWidth>
-                        Buscar
-                    </Button>
-                </Box>
             </FormControl>
         </form>
     );
