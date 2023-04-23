@@ -21,6 +21,11 @@ export const NewsProvider = ({ children }) => {
         setCategory(e.target.value);
     };
 
+    //* Change page
+    const handdlerChangePage = (e) => {
+        setPage(parseInt(e.target.textContent));
+    };
+
     //* UseEffect request api
     useEffect(() => {
         const requestNews = async () => {
@@ -39,7 +44,7 @@ export const NewsProvider = ({ children }) => {
         };
 
         requestNews();
-    }, [category]);
+    }, [category, page]);
 
     return (
         <NewsContext.Provider
@@ -47,7 +52,8 @@ export const NewsProvider = ({ children }) => {
                 handdlerChangeCategory,
                 category,
                 news,
-                totalPage
+                totalPage,
+                handdlerChangePage,
             }}
         >
             {children}
