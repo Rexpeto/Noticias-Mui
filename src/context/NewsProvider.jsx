@@ -47,6 +47,7 @@ export const NewsProvider = ({ children }) => {
                 handdlerChangeCategory,
                 category,
                 news,
+                totalPage
             }}
         >
             {children}
