@@ -2,6 +2,7 @@ import { Container, Grid, Typography } from "@mui/material";
 import { NewsProvider } from "./context/NewsProvider";
 import Search from "./components/Search";
 import ListNews from "./components/ListNews";
+import Paginations from "./components/Paginations";
 
 const App = () => {
     return (
@@ -25,6 +26,9 @@ const App = () => {
                     </Grid>
                 </Grid>
                 <ListNews />
+                <Grid container direction="row" justifyContent="center">
+                    <Paginations />
+                </Grid>
             </Container>
         </NewsProvider>
     );
