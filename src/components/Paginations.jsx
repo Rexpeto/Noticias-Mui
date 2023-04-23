@@ -1,10 +1,15 @@
+import useNews from "../hooks/useNews";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 
 const Paginations = () => {
+    const { totalPage } = useNews();
+
+    const totalPages = Math.ceil(totalPage / 20);
+
     return (
         <Stack spacing={2} direction="row">
-            <Pagination count={10} color="primary" />
+            <Pagination count={totalPages} color="primary" />
         </Stack>
     );
 };
