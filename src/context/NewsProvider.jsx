@@ -10,20 +10,30 @@ export const NewsProvider = ({ children }) => {
     //* State Category
     const [category, setCategory] = useState("general");
 
+    //* State page result
+    const [page, setPage] = useState(1);
+
+    //* State total page
+    const [totalPage, setTotalPage] = useState(0);
+
     const handdlerChangeCategory = (e) => {
+        setPage(1);
         setCategory(e.target.value);
     };
 
     //* UseEffect request api
     useEffect(() => {
         const requestNews = async () => {
-            const url = `https://newsapi.org/v2/top-headlines?country=ve&category=${category}&apiKey=${
+            const url = `https://newsapi.org/v2/top-headlines?country=ve&page=${page}&category=${category}&apiKey=${
                 import.meta.env.VITE_API_KEY
             }`;
 
             const {
                 data: { articles },
+                data: { totalResults },
             } = await axios(url);
+
+            setTotalPage(totalResults);
 
             setNews(articles);
         };
